@@ -1,9 +1,11 @@
+using APISecurityWithAPIKeys.Authentication;
 using Microsoft.AspNetCore.Mvc;
 
 namespace APISecurityWithAPIKeys.Controllers
 {
     [ApiController]
     [Route("[controller]")]
+    [ServiceFilter(typeof(ApiKeyAuthenticationFilter))]
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
